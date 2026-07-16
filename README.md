@@ -1,6 +1,6 @@
 # Melsec GX Import — VS Code Extension
 
-[![Version](https://img.shields.io/badge/version-0.1.143-blue)](package.json)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)](package.json)
 [![VS Code](<https://img.shields.io/badge/VS%20Code-%3E%3D1.95.0-blue?logo=visualstudiocode>)](https://code.visualstudio.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows)](https://www.microsoft.com/windows)
