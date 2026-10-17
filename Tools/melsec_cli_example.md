@@ -1,6 +1,7 @@
-# CLI Example — Melsec GX Works3 Import
+<!-- cmsoft:managed melsec-import - Prepare Workspace of CMsoft Import for Melsec updates this file; delete this line to keep your own version -->
+# CLI Example — CMsoft Import for Melsec
 
-`cli_example.py` is a minimal Python client for the Melsec CLI bridge.
+`melsec_cli_example.py` is a minimal Python client for the Melsec CLI bridge.
 
 ## Requirements
 
@@ -16,7 +17,7 @@
 ## Usage
 
 ```powershell
-python Tools/cli_example.py
+python Tools/melsec_cli_example.py
 ```
 
 ## Safety

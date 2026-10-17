@@ -1,15 +1,11 @@
-# Melsec GX Works3 Import — workspace ignores
-
-# Import cache and CLI bridge state
+# CMsoft Import for Melsec: import cache and CLI bridge state
 MelsecImport/.melsec-cache/
 .melsec/cli.json
-
 # Local-only Claude Code notes
 CLAUDE.local.md
-
 # User-generated script outputs
-UserFiles/
-
+UserFiles/*
+!UserFiles/.gitkeep
 # Build artifacts
 out/
 *.vsix

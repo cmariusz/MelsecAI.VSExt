@@ -1,10 +1,14 @@
-# AGENTS — Melsec GX Works3 Import Workspace
+## CMsoft Import for Melsec
 
-This workspace is configured for the **Melsec GX Works3 Import** VS Code extension.
+GX Works3 projects are imported into `MelsecImport/Projects/` and exported back with the **CMsoft Import for
+Melsec** VS Code extension. Read before working with GX Works3 files:
 
-See [`.github/copilot-instructions.md`](.github/copilot-instructions.md) for detailed AI workflow guidance when working with GX Works3 projects.
+- [.github/instructions/melsec-import.instructions.md](.github/instructions/melsec-import.instructions.md) —
+  the AI workflow (connect → inspect → import → edit → export → build) and the rules;
+- [.github/instructions/melsec-import-cli.instructions.md](.github/instructions/melsec-import-cli.instructions.md) —
+  the CLI bridge for scripts and agents (`.melsec/cli.json`).
 
-## Conventions
+Conventions:
 
 - **Import** = GX Works3 → workspace (pull objects into local XML files).
 - **Export** = workspace → GX Works3 (push local XML files into the PLC project).

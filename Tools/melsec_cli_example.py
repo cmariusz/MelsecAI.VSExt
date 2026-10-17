@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Minimal example client for the Melsec GX Works3 Import CLI bridge."""
+# cmsoft:managed melsec-import - Prepare Workspace of CMsoft Import for Melsec updates this file; delete this line to keep your own version
+"""Minimal example client for the CMsoft Import for Melsec CLI bridge."""
 
 import json
 import pathlib

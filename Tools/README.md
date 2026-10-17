@@ -1,18 +1,7 @@
-# Tools
+## CMsoft Import for Melsec
 
-This folder is for your own utility scripts that work with the Melsec GX Works3 Import workspace.
+- `melsec_cli_example.py` / `melsec_cli_example.md` — shows how to call the Melsec CLI bridge
+  (`.melsec/cli.json`) from Python.
 
-Use it for:
-
-- Automation helpers that call the CLI bridge (`.melsec/cli.json`).
-- Scripts that process imported XML files under `MelsecImport/Projects/`.
-- Build / validation helpers.
-- One-off migration or reporting scripts.
-
-Add a matching `.md` file for every script so other team members (and AI assistants) know what it does and how to run it.
-
-Example scripts:
-
-- `cli_example.py` / `cli_example.md` — shows how to call the Melsec CLI bridge from Python.
-
-> `UserFiles/` (created at workspace root) is the recommended output directory for scripts so generated artifacts are not committed by accident.
+Ideas: automation helpers calling the CLI bridge, scripts processing the imported XML files under
+`MelsecImport/Projects/`, build / validation helpers, one-off migration or reporting scripts.
