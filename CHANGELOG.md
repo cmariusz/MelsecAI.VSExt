@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.2.0] - 2026-10-17
+
+- **README: website link** — the README starts with a link to [www.cmsoft.com.pl](https://www.cmsoft.com.pl); its *FREE and PRO* table is headed like in the other CMsoft extensions.
+
 ## [2.1.0] - 2026-10-17
 
 - **New name: CMsoft Import for Melsec** — the extension formerly called *Melsec GX Import* is now *CMsoft Import for Melsec*: the activity bar view, the commands (*CMsoft Import for Melsec: …*), the Output channel, the walkthrough, the chat participant (`@melsec` keeps its handle) and the user manual carry the new name. The extension ID (`MariuszCzyrnek.melsec-import`), the command IDs and the settings stay the same.

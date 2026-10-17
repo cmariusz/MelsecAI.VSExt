@@ -1,6 +1,8 @@
 # CMsoft Import for Melsec — VS Code Extension
 
-[![Version](https://img.shields.io/badge/version-2.1.0-blue)](CHANGELOG.md)
+🌐 **[www.cmsoft.com.pl](https://www.cmsoft.com.pl)** — all CMsoft extensions, the shop and contact
+
+[![Version](https://img.shields.io/badge/version-2.2.0-blue)](CHANGELOG.md)
 [![VS Code](https://img.shields.io/badge/VS%20Code-%3E%3D1.95.0-blue?logo=visualstudiocode)](https://code.visualstudio.com/)
 [![License: Commercial EULA](https://img.shields.io/badge/License-Commercial%20EULA-blue.svg)](LICENSE.md)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows)](https://www.microsoft.com/windows)
@@ -12,7 +14,7 @@
 
 The English user manual ships with the extension and opens inside VS Code, offline: **CMsoft Import for Melsec: Open User Manual**, **CMsoft Import for Melsec: Search the User Manual** (jumps to a chapter or section), the walkthrough *Get Started with CMsoft Import for Melsec*, the links of the empty *Project Structure* view, the **Open Help** button of a failed *Open Project*, and **Manuals** in the shared **CMsoft** status bar item (**Help: CMsoft Manuals…** lists the manuals of all installed CMsoft extensions). It covers installation, setting up the GX Works3 Open Interface, every function with screenshots, a complete worked example with real build errors, the Copilot tools, the CLI bridge, settings, the license and troubleshooting.
 
-## Free and PRO
+## FREE and PRO
 
 | Feature                                                              | FREE                           | PRO          |
 | -------------------------------------------------------------------- | ------------------------------ | ------------ |
