@@ -6,7 +6,8 @@ This project includes third-party components. Redistribution of this extension s
 
 ## Project License
 
-- This project source code is licensed under MIT (see `LICENSE`).
+- This extension is proprietary commercial software licensed under the End User License Agreement (see `LICENSE.md`). Versions 1.0.0 and earlier were released under the MIT License and remain MIT-licensed; version 2.0.0 and later are not.
+- The third-party components below keep their own licenses.
 
 ## Runtime dependencies (Node.js)
 
