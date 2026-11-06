@@ -21,6 +21,19 @@ This project includes third-party components. Redistribution of this extension s
   - `sax` — BlueOak-1.0.0
   - `xmlbuilder` — MIT
 
+## Bundled into `out/vendor/mcpSdk.js` (the MCP server)
+
+`scripts/bundle-mcp-sdk.js` bundles the MCP SDK and its dependencies with esbuild into one file; their license texts ship next to it in `out/vendor/mcpSdk.LICENSES.txt`.
+
+- `@modelcontextprotocol/sdk` (^1.32.2) — MIT
+- Transitive, in the bundle:
+  - `@hono/node-server`, `hono` — MIT
+  - `ajv`, `ajv-formats`, `fast-deep-equal`, `json-schema-traverse` — MIT
+  - `content-type` — MIT
+  - `fast-uri` — BSD-3-Clause (its notice is in `mcpSdk.LICENSES.txt`)
+  - `zod` — MIT
+  - `zod-to-json-schema` — ISC
+
 ## .NET wrapper dependencies (NuGet)
 
 - `Newtonsoft.Json` (13.0.3) — MIT

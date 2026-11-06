@@ -2,13 +2,17 @@
 
 🌐 **[www.cmsoft.com.pl](https://www.cmsoft.com.pl)** — all CMsoft extensions, the shop and contact
 
-[![Version](https://img.shields.io/badge/version-2.2.0-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.4.0-blue)](CHANGELOG.md)
 [![VS Code](https://img.shields.io/badge/VS%20Code-%3E%3D1.95.0-blue?logo=visualstudiocode)](https://code.visualstudio.com/)
 [![License: Commercial EULA](https://img.shields.io/badge/License-Commercial%20EULA-blue.svg)](LICENSE.md)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows)](https://www.microsoft.com/windows)
 [![Author](https://img.shields.io/badge/Author-CMsoft-orange?logo=linkedin)](https://www.linkedin.com/in/mariusz-czyrnek-a33b87a6)
 
-**Bidirectional bridge between VS Code and Mitsubishi GX Works3** — import PLC programs from GX Works3 to local files, edit them with full VS Code + Copilot power, and export changes back. Built on the GX Works3 Open Interface (GXW3OpenIF).
+**Bidirectional bridge between VS Code and Mitsubishi GX Works3** — import PLC programs from GX Works3 to local files, edit them with full VS Code + Copilot power, export changes back, build, and test the program in GX Simulator3 (Write to PLC, RUN / STOP, devices over SLMP) — yourself, through Copilot, or through Claude Code and other AI agents over the built-in MCP server. Built on the GX Works3 Open Interface (GXW3OpenIF).
+
+[![One AI Agent in the Engineering Tools of Two Vendors: Mitsubishi GX Works3 + Siemens TIA Portal - watch on YouTube](https://img.youtube.com/vi/Ar81pUYCO30/maxresdefault.jpg)](https://youtu.be/Ar81pUYCO30)
+
+▶ [Watch on YouTube](https://youtu.be/Ar81pUYCO30): one AI agent in the engineering tools of two vendors - it writes the ladder program in GX Works3 with this extension, builds it, tests it in the GX Simulator3 system simulation, and builds the WinCC Unified HMI in TIA Portal that runs against it.
 
 ## User Manual
 
@@ -19,24 +23,29 @@ The English user manual ships with the extension and opens inside VS Code, offli
 | Feature                                                              | FREE                           | PRO          |
 | -------------------------------------------------------------------- | ------------------------------ | ------------ |
 | Open / attach GX Works3 projects, browse the project structure, save | ✅                             | ✅           |
-| Import POUs, Global Labels and SDTs from GX Works3 to the workspace  | ✅                             | ✅           |
-| Build / Rebuild with build error details                             | ✅                             | ✅           |
+| Import POUs, Global Labels and SDTs from GX Works3 to the workspace  | up to 10 objects per operation | ✅ unlimited |
 | Export from the workspace to GX Works3                               | up to 10 objects per operation | ✅ unlimited |
-| Copilot Language Model tools and the `@melsec` chat participant      | ⛔                             | ✅           |
+| Next import or export                                                | 15 minutes after the previous  | ✅ at once   |
+| Build / Rebuild with build error details                             | ✅                             | ✅           |
+| GX Simulator3 (system and PLC simulation), PLC status, read PLC devices | ✅                          | ✅           |
+| Write to PLC, remote RUN / STOP / RESET, write PLC devices           | ⛔                             | ✅           |
+| Copilot tools, the `@melsec` chat participant and the MCP server for AI agents | ⛔                   | ✅           |
 | CLI bridge for scripts and automation                                | ⛔                             | ✅           |
 | Prepare Workspace (AI instructions, templates, Tools)                | ⛔                             | ✅           |
 
+- **FREE limits:** one operation is one command — Import Project, a folder of the tree, one object, an export of a file, a folder or all files — or one AI tool call. It counts the POUs, global label lists and data types it reads from or writes to GX Works3; an operation with more than 10 objects is refused before anything is read or sent (import or export a smaller folder or single objects). After an operation the next import or export is available 15 minutes later.
 - **14-day free trial**, no payment details needed: **CMsoft Import for Melsec: Manage License / Subscription** → *Try for free*.
-- Subscription (monthly or yearly, renews automatically) or one-time payment: **CMsoft Import for Melsec: Buy License** — prices on the [pricing page](https://extensions.cmsoft.com.pl/pricing?product=melsec-import). A license covers one Seat (one named user on one activated workstation).
+- Subscription (monthly or yearly, renews automatically): **CMsoft Import for Melsec: Buy License** — prices on the [pricing page](https://extensions.cmsoft.com.pl/pricing?product=melsec-import). A license covers one Seat (one named user on one activated workstation).
 - The license is shown in the shared **CMsoft** status bar item (one item for all installed CMsoft extensions) and in the *Connection* view; both open the license panel. The CMsoft item also lists the user manuals of the installed CMsoft extensions under **Manuals**.
 
 ## Key Features
 
-### Import from GX Works3 (GX Works3 → local files)
+### Import from GX Works3 (GX Works3 → local files) — FREE up to 10 objects per operation
 
 | Capability                      | Description                                                      |
 | ------------------------------- | ---------------------------------------------------------------- |
-| **Connect to GX Works3**  | Open a project file (`.gx3`) directly or through a file dialog |
+| **Connect to GX Works3**  | Open a project file (`.gx3`) directly or through a file dialog; a project with GX Works3 user authentication asks for the login in masked input boxes |
+| **New Project**           | Create an empty GX Works3 project for a MELSEC iQ-R, iQ-F or iQ-L CPU and connect to it |
 | **Import Entire Project** | Import POUs, Global Labels and SDTs from the current project     |
 | **Import POUs**           | Import Program, FB and FUN blocks as PLCopen XML                 |
 | **Import Global Labels**  | Import global label lists as XML                                 |
@@ -59,14 +68,32 @@ The English user manual ships with the extension and opens inside VS Code, offli
 
 The build messages (POU, message, GX Works3 error code) are read from the GX Works3 **Output** window of the project's own GX Works3 and listed in the Output channel.
 
+### Simulation and Write to PLC
+
+| Capability | Description |
+| --- | --- |
+| **Simulation** (FREE) | The *Simulation* row starts and stops the **PLC simulation** of GX Simulator3 with the open project, and finds, runs and stops a **system simulation** started in GX Works3; an HMI (WinCC Unified, GOT) reaches both on `127.0.0.1:5511` |
+| **Write to PLC** (PRO) | Writes parameters, program and global labels — to a simulation with STOP, write, RESET and RUN; to a real PLC after a warning, without changing its operating state |
+| **Remote RUN / STOP / RESET** (PRO) | Of the simulation, or of a real PLC after a warning |
+| **Read / Write PLC Devices** | Over SLMP: `D100:4 M0:16 D200:2:float`, `D100=1234 M10=true` — reading FREE, writing PRO |
+
+The GX Works3 Open Interface cannot create or change the hardware configuration; the extension chooses only the CPU of a new project.
+
 ### Copilot / AI Agent Integration (PRO)
 
 The extension exposes **Language Model Tools** (prefix `melsec_*`) plus a `@melsec` chat participant:
 
-- **Connection / discovery** — `melsec_connect`, `melsec_disconnect`, `melsec_save_project`, `melsec_refresh`
+- **Connection / discovery** — `melsec_connect`, `melsec_create_project`, `melsec_disconnect`, `melsec_save_project`, `melsec_refresh`
 - **Pull from GX Works3 → workspace** — `melsec_list_objects`, `melsec_import_object`, `melsec_import_project`
 - **Push workspace → GX Works3** — `melsec_export_file`
 - **Build loop** — `melsec_build`, `melsec_rebuild`
+- **Simulation and PLC** — `melsec_plc_status`, `melsec_start_simulation`, `melsec_stop_simulation`, `melsec_download_to_plc`, `melsec_plc_run_state`, `melsec_read_devices`, `melsec_write_devices`
+
+**MCP server** — the same 18 tools for Claude Code, Claude Desktop, Cursor and every other MCP client: a localhost-only Streamable HTTP server with a Bearer token (`.melsec/mcp.json`), on by default (`melsecImport.mcp.enabled`); VS Code's Copilot finds it by itself.
+
+**Safety** — the AI tools always reach the simulation; a real PLC only after you allowed it at the machine (row *PLC Download for AI*, `melsecImport.lmTools.allowPlcDownload`, off by default).
+
+**Prepare Workspace** writes the instructions the AI agents read, among them how a GX Works3 project and its PLCopen XML files are built (tasks, ST and ladder bodies, labels with devices, data types) and how to write a project from scratch that GX Works3 builds. After an update, a **What's New** tab shows what the version brings and the videos of the [CMsoft channel on YouTube](https://www.youtube.com/@cmsoft.com.pl-ai) - like the [one AI agent in GX Works3 and TIA Portal](https://youtu.be/Ar81pUYCO30).
 
 The `@melsec` participant sends your request to the chat model with these tools and runs the tools it calls. Tools that write into GX Works3 (`melsec_export_file`, `melsec_save_project`) ask for confirmation in the chat unless `melsecImport.lmTools.autoConfirmExports` is enabled; the import tools, which overwrite workspace files, always ask.
 
@@ -182,17 +209,19 @@ If GX Works3 is already running with the project open, you can also use **Attach
 3. Choose **Export to GX Works** or **Export All Objects to GX Works**.
 4. Objects are exported into the open project.
 
-Without a PRO license one export operation covers up to 10 objects; larger operations ask for a license.
+Without a PRO license one import or export operation covers up to 10 objects and the next one is available 15 minutes later; larger operations ask for a license.
 
 ## Architecture
 
 ```
-VS Code Extension (TypeScript)
+AI agents (MCP) · scripts (CLI) · Copilot (LM tools)
+    ↓
+VS Code Extension (TypeScript) ── SLMP ──→ GX Simulator3 / PLC (devices, RUN / STOP)
     ↓ electron-edge-js / edge-js
 MelsecOpenIFBridge (.NET Framework 4.8)
     ↓ GXW3OpenIF32/64.dll
 GX Works3 Open Interface
-    ↓ GX Works3 IDE / PLC
+    ↓ GX Works3 IDE / GX Simulator3 / PLC
 ```
 
 ## Third-Party Licensing & Redistribution
