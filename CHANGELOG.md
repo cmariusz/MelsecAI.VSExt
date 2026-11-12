@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.5.0] - 2026-11-12
+
+- **Fixes** — version 2.4.0 did not start after an installation or an update: its views stayed empty, the What's New tab did not open, and the **CMsoft** status bar item showed neither the license nor the user manual of CMsoft Import for Melsec. This version starts again and brings everything 2.4.0 announced (below).
+
 ## [2.4.0] - 2026-11-06
 
 - **Simulation and Write to PLC** — start and stop GX Simulator3 from VS Code (a system simulation started in GX Works3 is found too), write the project to the simulation or to a PLC, remote RUN / STOP / RESET, and read or write PLC devices over SLMP. An HMI such as WinCC Unified runs against the same simulation. Status, simulation and reading devices are FREE; writing is PRO.

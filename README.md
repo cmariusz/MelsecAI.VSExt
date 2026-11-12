@@ -2,7 +2,7 @@
 
 🌐 **[www.cmsoft.com.pl](https://www.cmsoft.com.pl)** — all CMsoft extensions, the shop and contact
 
-[![Version](https://img.shields.io/badge/version-2.4.0-blue)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.5.0-blue)](CHANGELOG.md)
 [![VS Code](https://img.shields.io/badge/VS%20Code-%3E%3D1.95.0-blue?logo=visualstudiocode)](https://code.visualstudio.com/)
 [![License: Commercial EULA](https://img.shields.io/badge/License-Commercial%20EULA-blue.svg)](LICENSE.md)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows)](https://www.microsoft.com/windows)
@@ -16,7 +16,7 @@
 
 ## User Manual
 
-The English user manual ships with the extension and opens inside VS Code, offline: **CMsoft Import for Melsec: Open User Manual**, **CMsoft Import for Melsec: Search the User Manual** (jumps to a chapter or section), the walkthrough *Get Started with CMsoft Import for Melsec*, the links of the empty *Project Structure* view, the **Open Help** button of a failed *Open Project*, and **Manuals** in the shared **CMsoft** status bar item (**Help: CMsoft Manuals…** lists the manuals of all installed CMsoft extensions). It covers installation, setting up the GX Works3 Open Interface, every function with screenshots, a complete worked example with real build errors, the Copilot tools, the CLI bridge, settings, the license and troubleshooting.
+The English user manual ships with the extension and opens inside VS Code, offline: **CMsoft Import for Melsec: Open User Manual**, **CMsoft Import for Melsec: Search the User Manual** (jumps to a chapter or section), the walkthrough *Get Started with CMsoft Import for Melsec*, the links of the empty *Project Structure* view, the **Open Help** button of a failed *Open Project*, and **Manuals** in the shared **CMsoft** status bar item (**Help: CMsoft Manuals…** lists the manuals of all installed CMsoft extensions). It covers installation, setting up the GX Works3 Open Interface, every function with screenshots, a complete worked example with real build errors, the simulation and Write to PLC, the Copilot tools, the MCP server for AI agents, the CLI bridge, settings, the license and troubleshooting.
 
 ## FREE and PRO
 
@@ -59,6 +59,8 @@ The English user manual ships with the extension and opens inside VS Code, offli
 | **Export XML File**   | Export a single PLCopen XML file into GX Works3 |
 | **Export XML Folder** | Export every XML file in a folder recursively   |
 
+An object GX Works3 did not import, and a file it refused on export, is an entry of the **Problems** panel with the whole message until it is transferred again.
+
 ### Build and Diagnostics
 
 | Capability              | Description                                            |
@@ -66,7 +68,7 @@ The English user manual ships with the extension and opens inside VS Code, offli
 | **Build Project**   | Build the GX Works3 project and report errors/warnings |
 | **Rebuild Project** | Rebuild All; a project that was never built gets a new label assignment |
 
-The build messages (POU, message, GX Works3 error code) are read from the GX Works3 **Output** window of the project's own GX Works3 and listed in the Output channel.
+The build messages (POU, message, GX Works3 error code) are read from the GX Works3 **Output** window of the project's own GX Works3 and listed in the Output channel and in the **Problems** panel, on the XML file of the program, function block or function.
 
 ### Simulation and Write to PLC
 
@@ -141,7 +143,7 @@ The extension **requires** the GX Works3 Open Interface (GXW3OpenIF) component f
 
 ## Installation
 
-1. Install the extension from the VS Code Marketplace (or `code --install-extension MariuszCzyrnek.melsec-import`), or from the VSIX file you received.
+1. Install the extension from the VS Code Marketplace, in VSCodium from Open VSX (or `code --install-extension MariuszCzyrnek.melsec-import`), or from the VSIX file you received.
 2. Make sure GX Works3 is installed.
 3. Open a workspace folder in VS Code.
 4. Run **CMsoft Import for Melsec: Prepare Workspace** (PRO) to scaffold `MelsecImport/`, the AI instructions (`.github/instructions/`, sections in `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`) and `.gitignore`.
@@ -168,6 +170,7 @@ The command creates:
 │   ├── copilot-instructions.md       # a section pointing to the instructions below
 │   ├── instructions/
 │   │   ├── melsec-import.instructions.md      # AI coding rules for GX Works3 XML files (all files)
+│   │   ├── melsec-import-xml.instructions.md  # How GX Works3 projects and their XML files are built (new objects included)
 │   │   └── melsec-import-cli.instructions.md  # CLI bridge usage for agents/scripts (Tools/)
 │   └── ProjectDescription.md         # Living project architecture document (created once)
 ├── Tools/                            # Your automation scripts (README section, melsec_cli_example.py)
