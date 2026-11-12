@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.6.0] - 2026-11-12
+
+- **What's New** — the tab now opens also after a new installation, and after an update from version 2.4.0, where it stayed closed; with several VS Code windows open it opens in the one you are working in.
+
 ## [2.5.0] - 2026-11-12
 
 - **Fixes** — version 2.4.0 did not start after an installation or an update: its views stayed empty, the What's New tab did not open, and the **CMsoft** status bar item showed neither the license nor the user manual of CMsoft Import for Melsec. This version starts again and brings everything 2.4.0 announced (below).
